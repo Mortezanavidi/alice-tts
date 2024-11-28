@@ -9,6 +9,8 @@
 [Ss]cripts
 pyvenv.cfg
 .venv
+**/venv
+**/env
 pip-selfcheck.json
 
 # Pycache
