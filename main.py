@@ -1,10 +1,9 @@
-from fastapi import FastAPI, HTTPException, BackgroundTasks
-from fastapi.responses import StreamingResponse, FileResponse
-from pydantic import BaseModel, Field
-import edge_tts
-import tempfile
-import os
-import asyncio
+from fastapi import FastAPI, HTTPException, BackgroundTasks # type: ignore
+from fastapi.responses import StreamingResponse, FileResponse # type: ignore
+from pydantic import BaseModel, Field # type: ignore
+import edge_tts # type: ignore
+import tempfile # type: ignore
+import os # type: ignore
 
 # Initialize FastAPI app
 app = FastAPI()
@@ -90,5 +89,5 @@ async def stream_tts(request: TTSRequest):
 
 # Run the FastAPI app
 if __name__ == "__main__":
-    import uvicorn
+    import uvicorn # type: ignore
     uvicorn.run(app, host="0.0.0.0", port=5500)
