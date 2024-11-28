@@ -9,34 +9,6 @@ Alice-TTS has many modules inside itself but as of now, it's only leveraging the
 - **Stream TTS Audio**: Stream the TTS audio in real-time.
 - **Customizable Speech**: Adjust speech rate and volume (e.g., `"-50%"`, `"+20%"`).
 
-## API Endpoints
-
-### 1. **Generate TTS (POST `/edgetts/gen`)**
-Convert text to speech and download the audio.
-
-#### Example Request:
-```bash
-curl -X POST "http://localhost:5500/edgetts/gen" \
--H "Content-Type: application/json" \
--d '{"message": "Hello World!", "voice": "en-GB-SoniaNeural"}' \
---output output.mp3
-```
-
-### 2. **Stream TTS (POST `/edgetts/stream`)**
-Stream TTS audio without downloading the full file.
-
-#### Example Request:
-```bash
-curl -X POST "http://localhost:5500/edgetts/stream" \
--H "Content-Type: application/json" \
--d '{"message": "Hello World!", "voice": "en-GB-SoniaNeural"}' \
---output output.mp3
-```
-
-#### Optional Parameters
-- `rate`: Speed adjustment (e.g., `"-50%"`, `"+20%"`).
-- `volume`: Volume adjustment (e.g., `"-50%"`, `"+20%"`).
-
 ## Installation
 
 ### With Docker
@@ -68,3 +40,31 @@ curl -X POST "http://localhost:5500/edgetts/stream" \
    ```
 
 3. **Access**: The API will be available at `http://localhost:5500`.
+
+## API Endpoints
+
+### 1. **Generate TTS (POST `/edgetts/gen`)**
+Convert text to speech and download the audio.
+
+#### Example Request:
+```bash
+curl -X POST "http://localhost:5500/edgetts/gen" \
+-H "Content-Type: application/json" \
+-d '{"message": "Hello World!", "voice": "en-GB-SoniaNeural"}' \
+--output output.mp3
+```
+
+### 2. **Stream TTS (POST `/edgetts/stream`)**
+Stream TTS audio without downloading the full file.
+
+#### Example Request:
+```bash
+curl -X POST "http://localhost:5500/edgetts/stream" \
+-H "Content-Type: application/json" \
+-d '{"message": "Hello World!", "voice": "en-GB-SoniaNeural"}' \
+--output output.mp3
+```
+
+#### Optional Parameters
+- `rate`: Speed adjustment (e.g., `"-50%"`, `"+20%"`).
+- `volume`: Volume adjustment (e.g., `"-50%"`, `"+20%"`).
