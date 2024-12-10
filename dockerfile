@@ -4,12 +4,14 @@ FROM python:3.10-slim
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the requirements file and install dependencies
-COPY ../requirements.txt /app/requirements.txt
-RUN pip install --no-cache-dir -r /app/requirements.txt
+# Copy the main.py
+COPY main.py .
 
-# Copy the rest of the application files
-COPY ../ /app
+# Copy the requirements.txt
+COPY requirements.txt .
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose the port the app will run on
 EXPOSE 5500

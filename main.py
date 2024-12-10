@@ -86,6 +86,10 @@ async def stream_tts(request: TTSRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error streaming TTS: {str(e)}")
 
+@app.get("/edgetts/list_voices")
+async def list_voices():
+    return await edge_tts.list_voices()
+        
 
 # Run the FastAPI app
 if __name__ == "__main__":
